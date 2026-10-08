@@ -73,7 +73,7 @@ npm install && npm run build   # build command
 npm start                      # start command (serves API + built React app on one port)
 ```
 
-Environment variables: `NODE_ENV=production`, `MONGODB_URI` (MongoDB Atlas), `JWT_SECRET`, `GOOGLE_CLIENT_ID`, `CLINIC_NAME`.
+Environment variables: see **[DEPLOY.md](DEPLOY.md)** for the full step-by-step guide (MongoDB Atlas, Google sign-in, Hostinger / Render).
 
 ## Roadmap
 
