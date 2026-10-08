@@ -10,6 +10,19 @@
 
 Do the steps in order. Every value you copy goes into Step 5.
 
+## Why Render, not Vercel?
+
+Vercel is built for **serverless** apps: your code runs in short-lived functions that can start and stop on many machines. ClinicQ is a **long-running server**. It keeps every patient's phone connected over Socket.IO, broadcasts "now serving" from memory, and uses an in-process lock so "Call next" can't double-fire. On Vercel, each phone could land on a different function instance, so a broadcast would reach only some phones, and the lock wouldn't protect anything. Vercel's WebSocket support is also still in beta, and connections close at the function's time limit. Making it work would need Redis and a rewrite, so it's not worth it for one clinic.
+
+| Host | Fits ClinicQ? | Cost |
+|---|---|---|
+| **Render** (Starter) | Yes: one always-on server, deploys from GitHub | $7/month (free tier sleeps) |
+| **Railway** (Hobby) | Yes: same idea | $5/month incl. $5 usage |
+| **Hostinger** Business / Cloud | Yes, but setup is less documented | Business plan needed |
+| **Vercel** | No, not without a rewrite | — |
+
+Vercel is great later for a pure frontend or a Next.js site, such as a portfolio page.
+
 ---
 
 ## Step 1: Push the code to GitHub
