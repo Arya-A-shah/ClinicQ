@@ -1,0 +1,19 @@
+{
+  "name": "clinicq",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Online token queue for a clinic: patients book from their phone and watch the line live.",
+  "main": "server.js",
+  "scripts": {
+    "postinstall": "npm install --prefix server && npm install --prefix client --include=dev",
+    "build": "npm run build --prefix client",
+    "start": "node server.js",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "test": "npm test --prefix server"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
